@@ -28,5 +28,18 @@ class StudentdalApplicationTests {
 		Student student = repo.findById(1l).get();
 		System.out.println(student);
 	}
+	
+	@Test
+	void testUpdateStudent() {
+		Student student = repo.findById(1l).get();
+		student.setSfee(400d);
+		repo.save(student);
+	}
+	
+	@Test
+	void testDeleteStudent() {
+		Student student = repo.findById(2l).get();
+		repo.delete(student);
+	}
 
 }
